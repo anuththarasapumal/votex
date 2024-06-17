@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar color="primary"> <!-- Change the color to 'primary' for blue header -->
+    <ion-title>
+     Data form
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-card color="primary">
+  <ion-card-header>
+    <ion-card-title>{{all_user_data.first_name}}</ion-card-title>
+    <!-- <ion-card-subtitle>{{gnd_data.dsd}}</ion-card-subtitle> -->
+  </ion-card-header>
+  <ion-card-content>{{all_user_data.dsd}}</ion-card-content>
+  <span class="gnd-text"> {{all_user_data.gnd}} </span>
+<br>
+<br>
+</ion-card>
+<ion-content class="ion-padding">
+  <div class="data-form">
+
+  <ion-list>
+    <ion-item>
+      <ion-input label="Voter's Name" labelPlacement="floating" [(ngModel)]="client_name" placeholder="Enter Voter's Name" class="name-input" ></ion-input>
+    </ion-item>
+    <!-- <span class="req-msg">Please enter client name*</span> -->
+    <ion-item>
+      <ion-input type="number" label="Phone Number"  labelPlacement="floating" (ionInput)="onInput($event,'phone_number')" [(ngModel)]="phone1" placeholder="Enter Phone Number" ></ion-input>
+    </ion-item>
+    <span class="warning-tag" *ngIf="phone_number_incorrect">Please enter valid phone number</span>
+    <ion-item>
+      <ion-input label="NIC" labelPlacement="floating" type="text" placeholder="Enter NIC" (ionInput)="onInput($event,'nic')" [(ngModel)]="nic"></ion-input>
+    </ion-item>
+    <span class="warning-tag" *ngIf="nic_incorrect">Please enter NICr</span>
+    <ion-item>
+      <ion-input label="Permanent Vote (ස්‌ථාවර ඡන්ද)" labelPlacement="floating" type="number" [(ngModel)]="pmt_vote" placeholder="Enter Permanent Vote"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Floating Vote (පාවෙන ඡන්ද)" labelPlacement="floating" type="number" placeholder="Enter Floating Vote" [(ngModel)]="flt_vote"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Address" labelPlacement="floating" type="text" placeholder="Enter Address" [(ngModel)]="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Party Type" label-placement="floating"  [(ngModel)]="party_id" >
+        <ion-select-option *ngFor="let item of poliparty_list" value={{item.id}}>{{item.name_short}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select label="In Country" label-placement="floating"  [(ngModel)]="local" >
+        <ion-select-option >Yes</ion-select-option>
+        <ion-select-option >No</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <br>
+  <ion-button class="login-btn" expand="full"  (click)="saveData()">Save</ion-button>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+          <ion-tabs>
+              <ion-tab-bar slot="bottom">
+                  <ion-tab-button  (click)="addData()">
+                      <ion-icon name="add-circle-outline"></ion-icon>
+                    <ion-label>Add Data</ion-label>
+                  </ion-tab-button>
+                <ion-tab-button  (click)="dataList()">
+                  <ion-icon name="list-outline"></ion-icon>
+                  <ion-label>List</ion-label>
+                  <!-- <ion-badge>6</ion-badge> -->
+                </ion-tab-button>
+                <ion-tab-button (click)="showSmmery()">
+                    <ion-icon name="stats-chart-outline"></ion-icon>
+                    <ion-label>Summery</ion-label>
+                </ion-tab-button>
+                <ion-tab-button (click)="goToProfile()">
+                  <ion-icon name="person-circle-outline"></ion-icon>
+                  <ion-label>Profile</ion-label>
+              </ion-tab-button>
+              </ion-tab-bar>
+            </ion-tabs> 
+   </ion-toolbar>
+</ion-footer>

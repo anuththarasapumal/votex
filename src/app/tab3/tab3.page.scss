@@ -1,0 +1,77 @@
+.delete-btn {
+    float: inline-end;
+    color: red;
+    font-size: 13px;
+
+}
+
+.edit-btn {
+    font-size: 13px;
+}
+
+ion-card-content {
+    padding-bottom: 0px !important;
+}
+
+.name-text {
+    text-transform: capitalize;
+}
+
+ion-col {
+    line-height: 0.5;
+    font-size: 12px;
+}
+
+.label-text {
+    font-weight: 600;
+}
+
+.footer-btns {
+    margin-top: -10px;
+    padding: 0px 10px;
+}
+
+ion-searchbar {
+    padding-bottom: 0px;
+}
+
+.no-results-card {
+
+    text-align: center;
+}
+ion-card-header {
+    padding: 10px 10px 0px 10px !important;
+}
+
+ion-card-content {
+    padding: 0px 10px 0px 10px;
+}
+.reg-votes{
+    padding: 4px 10px 0px 10px;
+display: block;
+}
+.gnd-text {
+    padding: 0px 10px 0px 10px;
+}
+
+ion-card {
+    text-align: end;
+}
+/* my-chart.component.scss */
+#chartdiv {
+    width: 100%;
+    height: 500px;
+  }
+.ion-sub-title{
+    margin-top: 5px;
+    font-size: 0.785rem;
+    text-align: right;
+    padding-inline-end: 0px !important;
+    // color: #006A4E;
+}
+.floting-label{
+    font-size: 0.785rem;
+    text-align: right;
+    padding-inline-end: 0px !important;
+    color: #cf8800;
+}

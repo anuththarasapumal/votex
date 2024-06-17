@@ -1,0 +1,46 @@
+h3 {
+    font-weight: 700;
+    font-size: 2.375rem;
+}
+ion-item{
+    margin-top:30px;
+}
+.login-btn {
+    margin: 0px 0px 0px 10px;
+}
+.large-font-input[type="text"] {
+    font-size: 24px !important; 
+    text-align: center;
+    padding: 0; /* Remove any padding */
+    margin: 0 auto; /* Center the element itself if necessary */
+  }
+  .center-text-input {
+    text-align: center;
+    padding: 0; /* Remove any padding */
+    margin: 0 auto; /* Center the element itself if necessary */
+  }
+
+.password-input{
+  -webkit-text-security:disc
+}
+
+.warning-tag {
+  font-size: 14px;
+  color: red;
+  margin: 5px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  ion-content {
+    --padding-top: 50px;
+    --padding-bottom: 50px;
+  }
+  
+  ion-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+

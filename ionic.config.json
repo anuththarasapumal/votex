@@ -1,0 +1,7 @@
+{
+  "name": "votex",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

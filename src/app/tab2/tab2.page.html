@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar color="primary"> <!-- Change the color to 'primary' for blue header -->
+    <ion-title>
+     Data List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-searchbar (ionInput)="filterContacts($event)" placeholder="Search Via Name,Phone,NIC"></ion-searchbar>
+
+<ion-content class="ion-padding">
+  <div class="data-form">
+    <ion-card *ngFor="let item of filteredContacts">
+      <ion-card-content (click)="showVoter(item.id)">
+        <ion-row>
+          <!-- <ion-col size="5"   class="label-text">Voter's Name</ion-col> -->
+          <ion-col size="12" class="name-input" [ngClass]="{'line-height': item.client_name.length > 20}"> {{item.client_name}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <!-- <ion-col size="5" class="label-text">Phone</ion-col> -->
+          <ion-col size="12" > {{item.nic}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" >{{item.party_name}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6" class="label-text">Floating Votes : {{item.flt_vote}}</ion-col>
+          <!-- <ion-col size="3" >Permanent : {{item.pmt_vote}}</ion-col> -->
+           <ion-col size="6" class="label-text">Permanent Votes : {{item.pmt_vote}}</ion-col>
+           <!-- <ion-col size="3" >: {{item.pmt_vote}}</ion-col> -->
+        </ion-row>
+        <!-- <ion-row class="user-data">
+          <ion-col size="5" class="label-text footer-text">GN Div. Agent</ion-col>
+          <ion-col size="7" class="footer-text name-input">: {{item.agent_name}} - {{item.user_name}}</ion-col>
+        </ion-row> -->
+        <ion-row>
+          <ion-col size="5" class="label-text footer-text"> Created / Updated</ion-col>
+          <ion-col size="1" class="label-text footer-text">: </ion-col>
+          <ion-col size="6" class="footer-text">{{item.date_created}}</ion-col>
+        </ion-row>
+      </ion-card-content>
+<br>
+    </ion-card>
+    <ion-card *ngIf="filteredContacts.length == 0" class="no-results-card" >
+      <ion-card-content style="  padding-top: 10px !important;
+      padding-bottom: 10px !important;">
+        <ion-row>
+          <ion-col size="12" class="label-text">No search results found</ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+          <ion-tabs>
+              <ion-tab-bar slot="bottom">
+                  <ion-tab-button  (click)="addData()">
+                      <ion-icon name="add-circle-outline"></ion-icon>
+                    <ion-label>Add Data</ion-label>
+                  </ion-tab-button>
+                <ion-tab-button  (click)="dataList()">
+                  <ion-icon name="list-outline"></ion-icon>
+                  <ion-label>List</ion-label>
+                  <!-- <ion-badge>6</ion-badge> -->
+                </ion-tab-button>
+                <ion-tab-button (click)="showSmmery()">
+                    <ion-icon name="stats-chart-outline"></ion-icon>
+                    <ion-label>Summery</ion-label>
+                </ion-tab-button>
+                <ion-tab-button (click)="goToProfile()">
+                  <ion-icon name="person-circle-outline"></ion-icon>
+                  <ion-label>Profile</ion-label>
+              </ion-tab-button>
+              </ion-tab-bar>
+            </ion-tabs> 
+   </ion-toolbar>
+</ion-footer>

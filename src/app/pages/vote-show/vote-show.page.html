@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary"> 
+        <ion-title>Show</ion-title>
+          <ion-buttons slot="start"> 
+            <ion-icon name="arrow-back-outline" (click)="back()"></ion-icon>
+    </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <div class="data-form">
+        <ion-card >
+          <ion-card-content >
+            <ion-row>
+              <ion-col size="5"   class="label-text">Voter's Name</ion-col>
+              <ion-col size="7" class="name-input" [ngClass]="{'line-height': filtered_vote.client_name.length > 20}">:  {{filtered_vote.client_name}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="5" class="label-text">NIC</ion-col>
+              <ion-col size="7" >: {{filtered_vote.nic}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="5" class="label-text">Address</ion-col>
+              <ion-col size="7" *ngIf="filtered_vote.address">: {{filtered_vote.address}}</ion-col>
+              <ion-col size="7" *ngIf="!filtered_vote.address">: -</ion-col>
+              
+            </ion-row>
+            <ion-row>
+              <ion-col size="5" class="label-text">Phone</ion-col>
+              <ion-col size="7">: {{filtered_vote.phone1}}</ion-col>
+              
+            </ion-row>
+            <ion-row> 
+             <ion-col size="5" class="label-text">Permanent Votes</ion-col>
+            <ion-col size="7" >: {{filtered_vote.pmt_vote}}</ion-col>
+       </ion-row>
+            <ion-row>
+               <ion-col size="5" class="label-text">Permanent Votes</ion-col>
+               <ion-col size="7" >: {{filtered_vote.flt_vote}}</ion-col>
+            </ion-row>
+            <ion-row class="user-data">
+              <ion-col size="5" class="label-text footer-text">GN Div. Agent</ion-col>
+              <ion-col size="7" class="footer-text name-input">: {{filtered_vote.agent_name}} - {{filtered_vote.user_name}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="5" class="label-text footer-text"> Created / Updated</ion-col>
+              <ion-col size="7" class="footer-text">: 444</ion-col>
+            </ion-row>
+          </ion-card-content>
+          <div class="footer-btns data-top">
+            <ion-button fill="clear"  class="edit-btn"  slot="start" (click)="onEdit(filtered_vote.id)">
+              Edit &nbsp;
+              <ion-icon name="create-outline"></ion-icon> 
+            </ion-button>
+            <ion-button fill="clear" class="delete-btn"  (click)="onDelete(filtered_vote.id)">
+              Delete &nbsp;
+              <ion-icon name="trash-bin-outline"></ion-icon>
+            </ion-button>
+        </div>
+        </ion-card>
+        
+
+      </div>
+    </ion-content>

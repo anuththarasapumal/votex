@@ -1,0 +1,42 @@
+ion-toolbar {
+    --background: var(--ion-color-primary); /* Ensure the toolbar background is blue */
+  }
+  
+  ion-back-button {
+    color: white; /* Change the color of the back button to white */
+  }
+  .profile-container {
+    text-align: center;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
+  }
+  
+  h2 {
+    margin: 10px 0;
+  }
+  
+  ion-list {
+    margin-top: 20px;
+  }
+  
+  ion-item h3 {
+    margin: 0;
+    // font-weight: bold;
+    color:  #3880ff;
+  }
+  
+  .change-pw-btn{
+    color: #3880ff;
+    margin: 20px 0px 0px 0px;
+}
+  ion-item p {
+    margin: 0;
+  }
+  .login-btn{
+    margin: 15px 0px 0px 10px;
+  }

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary"> <!-- Change the color to 'primary' for blue header -->
+        <ion-title>Edit Data Form</ion-title>
+          <ion-buttons slot="start"> 
+            <ion-icon name="arrow-back-outline" (click)="back()"></ion-icon>
+    </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+<ion-content class="ion-padding">
+  <div class="data-form">
+  <ion-list>
+    <ion-item>
+      <ion-input label="Client Name" labelPlacement="floating" [(ngModel)]="client_name" placeholder="Enter Client Name"  placeholder="Enter text" class="name-input"  readonly></ion-input>
+    <!-- <span class="req-msg">Please enter client name*</span> -->
+    </ion-item>
+    <ion-item>
+      <ion-input label="Phone Number" labelPlacement="floating" [(ngModel)]="phone1" type="number" placeholder="Enter text" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Address" labelPlacement="floating" placeholder="Enter Address" type="text" [(ngModel)]="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Permanent Vote" labelPlacement="floating" [(ngModel)]="pmt_vote" type="number" placeholder="Enter Permanent Votes"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Floating Votes" labelPlacement="floating" placeholder="Enter text" type="number" [(ngModel)]="flt_vote"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select label="Party Type" label-placement="floating"  [(ngModel)]="party_id" >
+        <ion-select-option *ngFor="let item of poliparty_list" value={{item.id}}>{{item.name_short}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select label="In Country" label-placement="floating"  [(ngModel)]="local" >
+        <ion-select-option >Yes</ion-select-option>
+        <ion-select-option >No</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <br>
+  <br>
+  <br>
+  <ion-button class="login-btn" expand="full"  (click)="saveData()">Update</ion-button>
+  </div>
+</ion-content>

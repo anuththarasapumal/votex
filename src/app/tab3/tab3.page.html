@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary"> <!-- Change the color to 'primary' for blue header -->
+    <ion-title>
+      Summery
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-card color="primary">
+  <ion-card-header>
+    <ion-card-title>{{all_user_data.first_name}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>{{all_user_data.dsd}}</ion-card-content>
+  <span class="gnd-text"> {{all_user_data.gnd}} </span>
+  <span class="reg-votes"> <span class="reg-vote-text">Reg. votes</span> <span class="reg-vote-value"> : {{reg_vote.reg_vote}}
+    </span></span>
+  <br>
+</ion-card>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-select label="Party Type" label-placement="floating"  [(ngModel)]="party_id" >
+      <ion-select-option *ngFor="let item of poliparty_list" value={{item.id}}>{{item.name_short}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <div class="data-form">
+    <ion-card>
+      <ion-card-content>
+        <ion-title class="ion-sub-title">
+          Total Votes {{total_pmt_vote}}
+        </ion-title>
+        <div id="pmtchart" style="width: 100%; height: 200px;"></div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <ion-title class="floting-label">
+          Total Votes {{total_flt_vote}}
+        </ion-title>
+        <div id="fltchart" style="width: 100%; height: 200px;"></div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button (click)="addData()">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          <ion-label>Add Data</ion-label>
+        </ion-tab-button>
+        <ion-tab-button (click)="dataList()">
+          <ion-icon name="list-outline"></ion-icon>
+          <ion-label>List</ion-label>
+          <!-- <ion-badge>6</ion-badge> -->
+        </ion-tab-button>
+        <ion-tab-button (click)="showSmmery()">
+          <ion-icon name="stats-chart-outline"></ion-icon>
+          <ion-label>Summery</ion-label>
+        </ion-tab-button>
+        <ion-tab-button (click)="goToProfile()">
+          <ion-icon name="person-circle-outline"></ion-icon>
+          <ion-label>Profile</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
